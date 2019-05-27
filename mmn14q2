@@ -1,0 +1,37 @@
+public static int what(int[]a){
+            int sum = sum(a);
+            int ans = a.length;
+            if(sum%2 == 0){
+                return ans;
+            } else {
+                int left = 0 ;
+                int right = a.length-1;
+                int count = 0;
+                while (left <= right){
+                    if(a[left] % 2 == 1){
+                        count++;
+                        ans -= count;
+                        return ans;
+                    } else {
+                        left++;
+                    } //left if
+
+                    if(a[right] % 2 == 1){
+                        count++;
+                        ans -= count;
+                        return ans;
+                    } else {
+                        right--;
+                    } //right if
+                }//while
+            } //else
+            return 0;
+        }//what
+
+        private static int sum(int[]arr){ //calculates the sum of all the values in the array
+            int sum = 0;
+            for (int i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
